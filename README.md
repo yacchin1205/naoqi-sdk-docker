@@ -11,7 +11,7 @@ Dockerfile for naoqi-sdk(Cross Toolchain)
     ```
 
 2. Download the cross toolchain (ex. `ctc-linux64-atom-2.3.0.110.zip` ) from https://community.aldebaran.com/en/resources/software and copy it into the `naoqi-sdk-docker` directory
-3. Move the `naoqi-sdk-docker` directory, and build an image...
+3. Change directory to the `naoqi-sdk-docker` directory, and build an image...
 
     ```
     $ docker build -t yacchin1205/pepper-buildenv .
