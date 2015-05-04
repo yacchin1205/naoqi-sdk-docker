@@ -10,7 +10,7 @@ Dockerfile for naoqi-sdk(Cross Toolchain)
     $ git clone https://github.com/yacchin1205/naoqi-sdk-docker.git
     ```
 
-2. Download the cross toolchain (ex. `ctc-linux64-atom-2.3.0.110.zip` ) from https://community.aldebaran.com/en/resources/software and copy the `naoqi-sdk-docker` directory
+2. Download the cross toolchain (ex. `ctc-linux64-atom-2.3.0.110.zip` ) from https://community.aldebaran.com/en/resources/software and copy it into the `naoqi-sdk-docker` directory
 3. Move the `naoqi-sdk-docker` directory, and build an image...
 
     ```
@@ -20,7 +20,7 @@ Dockerfile for naoqi-sdk(Cross Toolchain)
     
 # How to use
 
-The qibuild worktree is configured at the /root, you can build by the following...
+The qibuild worktree is configured at the /root, you can build NAOqi sources by the following...
 
 ```
 $ docker run -v /vagrant/examples/audiovideocapture/:/root/examples/ -it yacchin1205/pepper-buildenv
