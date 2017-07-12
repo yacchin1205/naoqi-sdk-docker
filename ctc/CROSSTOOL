@@ -1,0 +1,281 @@
+major_version: "local"
+minor_version: ""
+default_target_cpu: "atom"
+
+default_toolchain {
+  cpu: "atom"
+  toolchain_identifier: "ctc_linux_atom"
+}
+
+default_toolchain {
+  cpu: "k8"
+  toolchain_identifier: "linux_gnu_x86"
+}
+
+toolchain {
+  abi_version: "gcc"
+  abi_libc_version: "glibc_2.19"
+  builtin_sysroot: "/ctc-linux64-atom-2.5.2.74/i686-aldebaran-linux-gnu/sysroot/"
+  compiler: "gcc"
+  host_system_name: "atom"
+  needsPic: true
+  supports_gold_linker: false
+  supports_incremental_linker: false
+  supports_fission: false
+  supports_interface_shared_objects: false
+  supports_normalizing_ar: true
+  supports_start_end_lib: false
+  supports_thin_archives: true
+  target_libc: "glibc_2.19"
+  target_cpu: "atom"
+  target_system_name: "arm_a15"
+  toolchain_identifier: "ctc_linux_atom"
+
+  tool_path { name: "ar" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-ar" }
+  tool_path { name: "compat-ld" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-ld" }
+  tool_path { name: "cpp" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-gcc" }
+  tool_path { name: "dwp" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-dwp" }
+  tool_path { name: "gcc" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-gcc" }
+  tool_path { name: "gcov" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-gcov" }
+  # C(++) compiles invoke the compiler (as that is the one knowing where
+  # to find libraries), but we provide LD so other rules can invoke the linker.
+  tool_path { name: "ld" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-ld" }
+  tool_path { name: "nm" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-nm" }
+  tool_path { name: "objcopy" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-objcopy" }
+  objcopy_embed_flag: "-I"
+  objcopy_embed_flag: "binary"
+  tool_path { name: "objdump" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-objdump" }
+  tool_path { name: "strip" path: "/ctc-linux64-atom-2.5.2.74/bin/i686-aldebaran-linux-gnu-strip" }
+
+  compiler_flag: "-DI_AM_A_ROBOT"
+  compiler_flag: "--sysroot=/ctc-linux64-atom-2.5.2.74/i686-aldebaran-linux-gnu/sysroot/"
+  compiler_flag: "-pipe"
+  compiler_flag: "-fomit-frame-pointer"
+  compiler_flag: "-m32"
+  compiler_flag: "-march=i686"
+  compiler_flag: "-mssse3"
+  compiler_flag: "-mfpmath=sse"
+  compiler_flag: "-finline-functions-called-once"
+  compiler_flag: "-finline-small-functions"
+  compiler_flag: "-falign-functions"
+  compiler_flag: "-falign-labels"
+  compiler_flag: "-falign-loops"
+  compiler_flag: "-falign-jumps"
+  compiler_flag: "-freorder-blocks"
+  compiler_flag: "-freorder-blocks-and-partition"
+  compiler_flag: "-freorder-functions"
+  compiler_flag: "-faggressive-loop-optimizations"
+  compiler_flag: "-ftree-vectorize"
+  compiler_flag: "-fpredictive-commoning"
+
+  compiler_flag: "-isystem"
+  compiler_flag: "/ctc-linux64-atom-2.5.2.74/python/include/python2.7"
+  #compiler_flag: "-isystem"
+  #compiler_flag: "external/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/libc/usr/include"
+  #compiler_flag: "-isystem"
+  #compiler_flag: "external/org_linaro_components_toolchain_gcc_5_3_1/lib/gcc/arm-linux-gnueabihf/5.3.1/include-fixed"
+  #compiler_flag: "-isystem"
+  #compiler_flag: "external/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/libc/usr/include"
+  cxx_flag: "-std=gnu++11"
+  cxx_flag: "-isystem"
+  cxx_flag: "/ctc-linux64-atom-2.5.2.74/python/include/python2.7"
+  #cxx_flag: "-isystem"
+  #cxx_flag: "external/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/include/c++/5.3.1"
+  #cxx_flag: "-isystem"
+  #cxx_flag: "external/org_linaro_components_toolchain_gcc_5_3_1/include/c++/5.3.1/arm-linux-gnueabihf"
+  #cxx_flag: "-isystem"
+  #cxx_flag: "external/org_linaro_components_toolchain_gcc_5_3_1/include/c++/5.3.1"
+
+  cxx_builtin_include_directory: "/ctc-linux64-atom-2.5.2.74/i686-aldebaran-linux-gnu/include/"
+  cxx_builtin_include_directory: "/ctc-linux64-atom-2.5.2.74/i686-aldebaran-linux-gnu/sysroot/"
+  cxx_builtin_include_directory: "/ctc-linux64-atom-2.5.2.74/lib/gcc/i686-aldebaran-linux-gnu/4.9.2/include/"
+  cxx_builtin_include_directory: "/ctc-linux64-atom-2.5.2.74/python/include/"
+  cxx_builtin_include_directory: "/ctc-linux64-atom-2.5.2.74/lib/gcc/i686-aldebaran-linux-gnu/4.9.2/include-fixed/"
+  cxx_builtin_include_directory: "/usr/local/lib/python2.7/dist-packages/numpy/core/include/"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//include)%"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//arm-linux-gnueabihf/libc/usr/include)%"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//arm-linux-gnueabihf/libc/usr/lib/include)%"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//arm-linux-gnueabihf/libc/lib/gcc/arm-linux-gnueabihf/5.3.1/include-fixed)%"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//include)%/c++/5.3.1"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//arm-linux-gnueabihf/libc/lib/gcc/arm-linux-gnueabihf/5.3.1/include)%"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//arm-linux-gnueabihf/libc/lib/gcc/arm-linux-gnueabihf/5.3.1/include-fixed)%"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//lib/gcc/arm-linux-gnueabihf/5.3.1/include)%"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//lib/gcc/arm-linux-gnueabihf/5.3.1/include-fixed)%"
+  #cxx_builtin_include_directory: "%package(@org_linaro_components_toolchain_gcc_5_3_1//arm-linux-gnueabihf/include)%/c++/5.3.1"
+
+  #linker_flag: "-Wl,--as-needed,--sysroot,/ctc-linux64-atom-2.5.2.74/i686-aldebaran-linux-gnu/sysroot/"
+  #linker_flag: "-lm"
+  #linker_flag: "-lpthread"
+  linker_flag: "-L/ctc-linux64-atom-2.5.2.74/i686-aldebaran-linux-gnu/sysroot/lib"
+  linker_flag: "-L/ctc-linux64-atom-2.5.2.74/i686-aldebaran-linux-gnu/sysroot/usr/lib"
+  linker_flag: "-L/ctc-linux64-atom-2.5.2.74/i686-aldebaran-linux-gnu/lib"
+  linker_flag: "-L/ctc-linux64-atom-2.5.2.74/lib"
+  #linker_flag: "-Lexternal/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/libc/lib"
+  #linker_flag: "-Lexternal/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/libc/usr/lib"
+  #linker_flag: "-Bexternal/org_linaro_components_toolchain_gcc_5_3_1/arm-linux-gnueabihf/bin"
+  #linker_flag: "-Wl,--dynamic-linker=/lib/ld-linux-armhf.so.3"
+
+  # Anticipated future default.
+  # This makes GCC and Clang do what we want when called through symlinks.
+  #unfiltered_cxx_flag: "-no-canonical-prefixes"
+  #linker_flag: "-no-canonical-prefixes"
+
+  # Make C++ compilation deterministic. Use linkstamping instead of these
+  # compiler symbols.
+  #unfiltered_cxx_flag: "-Wno-builtin-macro-redefined"
+  #unfiltered_cxx_flag: "-D__DATE__=\"redacted\""
+  #unfiltered_cxx_flag: "-D__TIMESTAMP__=\"redacted\""
+  #unfiltered_cxx_flag: "-D__TIME__=\"redacted\""
+
+  # Security hardening on by default.
+  # Conservative choice; -D_FORTIFY_SOURCE=2 may be unsafe in some cases.
+  # We need to undef it before redefining it as some distributions now have
+  # it enabled by default.
+  #compiler_flag: "-U_FORTIFY_SOURCE"
+  #compiler_flag: "-fstack-protector"
+  #compiler_flag: "-fPIE"
+  #linker_flag: "-pie"
+  #linker_flag: "-Wl,-z,relro,-z,now"
+
+  # Enable coloring even if there's no attached terminal. Bazel removes the
+  # escape sequences if --nocolor is specified.
+  #compiler_flag: "-fdiagnostics-color=always"
+
+  # All warnings are enabled. Maybe enable -Werror as well?
+  #compiler_flag: "-Wall"
+  # Enable a few more warnings that aren't part of -Wall.
+  #compiler_flag: "-Wunused-but-set-parameter"
+  # But disable some that are problematic.
+  #compiler_flag: "-Wno-free-nonheap-object" # has false positives
+
+  # Keep stack frames for debugging, even in opt mode.
+  #compiler_flag: "-fno-omit-frame-pointer"
+
+  #compilation_mode_flags {
+  #  mode: DBG
+    # Enable debug symbols.
+  #  compiler_flag: "-g"
+  #}
+  #compilation_mode_flags {
+  #  mode: OPT
+    # No debug symbols.
+    # Maybe we should enable https://gcc.gnu.org/wiki/DebugFission for opt or
+    # even generally? However, that can't happen here, as it requires special
+    # handling in Bazel.
+  #  compiler_flag: "-g0"
+
+    # Conservative choice for -O
+    # -O3 can increase binary size and even slow down the resulting binaries.
+    # Profile first and / or use FDO if you need better performance than this.
+  #  compiler_flag: "-O2"
+
+    # Disable assertions
+  #  compiler_flag: "-DNDEBUG"
+
+    # Removal of unused code and data at link time (can this increase binary size in some cases?).
+  #  compiler_flag: "-ffunction-sections"
+  #  compiler_flag: "-fdata-sections"
+  #  linker_flag: "-Wl,--gc-sections"
+  #}
+}
+
+toolchain {
+  toolchain_identifier: "linux_gnu_x86"
+  abi_version: "clang"
+  abi_libc_version: "glibc_2.19"
+  builtin_sysroot: ""
+  compiler: "clang"
+  host_system_name: "i686-unknown-linux-gnu"
+  needsPic: true
+  supports_gold_linker: true
+  supports_incremental_linker: false
+  supports_fission: false
+  supports_interface_shared_objects: false
+  supports_normalizing_ar: false
+  supports_start_end_lib: true
+  target_libc: "glibc_2.19"
+  target_cpu: "k8"
+  target_system_name: "x86_64-unknown-linux-gnu"
+  cxx_flag: "-std=c++0x"
+  linker_flag: "-lstdc++"
+  linker_flag: "-lm"
+  linker_flag: "-fuse-ld=gold"
+  linker_flag: "-B/usr/local/bin"
+  linker_flag: "-B/usr/bin"
+  cxx_builtin_include_directory: "/usr/include/c++/4.9"
+  cxx_builtin_include_directory: "/usr/include/x86_64-linux-gnu/c++/4.9"
+  cxx_builtin_include_directory: "/usr/include/c++/4.9/backward"
+  cxx_builtin_include_directory: "/usr/local/include"
+  cxx_builtin_include_directory: "/usr/local/lib/clang/5.0.0/include"
+  cxx_builtin_include_directory: "/usr/include/x86_64-linux-gnu"
+  cxx_builtin_include_directory: "/usr/include"
+  cxx_builtin_include_directory: "/usr/lib/llvm-3.8/lib/clang/3.8.0/include"
+  objcopy_embed_flag: "-I"
+  objcopy_embed_flag: "binary"
+  unfiltered_cxx_flag: "-Wno-builtin-macro-redefined"
+  unfiltered_cxx_flag: "-D__DATE__=\"redacted\""
+  unfiltered_cxx_flag: "-D__TIMESTAMP__=\"redacted\""
+  unfiltered_cxx_flag: "-D__TIME__=\"redacted\""
+  compiler_flag: "-U_FORTIFY_SOURCE"
+  compiler_flag: "-fstack-protector"
+  compiler_flag: "-Wall"
+  compiler_flag: "-B/usr/local/bin"
+  compiler_flag: "-B/usr/bin"
+  compiler_flag: "-fcolor-diagnostics"
+  compiler_flag: "-fno-omit-frame-pointer"
+  tool_path {name: "ld" path: "/usr/bin/ld" }
+  tool_path {name: "cpp" path: "/usr/bin/cpp" }
+  tool_path {name: "dwp" path: "/usr/bin/dwp" }
+  tool_path {name: "gcov" path: "/usr/bin/gcov" }
+  tool_path {name: "nm" path: "/usr/bin/nm" }
+  tool_path {name: "objcopy" path: "/usr/bin/objcopy" }
+  tool_path {name: "objdump" path: "/usr/bin/objdump" }
+  tool_path {name: "strip" path: "/usr/bin/strip" }
+  tool_path {name: "gcc" path: "/usr/bin/clang" }
+  tool_path {name: "ar" path: "/usr/bin/ar" }
+
+  compilation_mode_flags {
+    mode: DBG
+    compiler_flag: "-g"
+  }
+  compilation_mode_flags {
+    mode: OPT
+    compiler_flag: "-g0"
+    compiler_flag: "-O2"
+    compiler_flag: "-D_FORTIFY_SOURCE=1"
+    compiler_flag: "-DNDEBUG"
+    compiler_flag: "-ffunction-sections"
+    compiler_flag: "-fdata-sections"
+    linker_flag: "-Wl,--gc-sections"
+  }
+  linking_mode_flags { mode: DYNAMIC }
+
+
+    feature {
+      name: 'coverage'
+      provides: 'profile'
+      flag_set {
+        action: 'preprocess-assemble'
+        action: 'c-compile'
+        action: 'c++-compile'
+        action: 'c++-header-parsing'
+        action: 'c++-header-preprocessing'
+        action: 'c++-module-compile'
+        flag_group {
+          flag: '-fprofile-arcs'
+          flag: '-ftest-coverage'
+      }
+
+
+
+      }
+      flag_set {
+        action: 'c++-link-interface-dynamic-library'
+        action: 'c++-link-dynamic-library'
+        action: 'c++-link-executable'
+        flag_group {
+          flag: '-lgcov'
+      }
+      }
+    }
+}
