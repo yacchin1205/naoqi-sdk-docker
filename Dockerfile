@@ -7,6 +7,7 @@ RUN apt-get update && \
 RUN echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" > /etc/apt/sources.list.d/bazel.list && \
     curl https://bazel.build/bazel-release.pub.gpg | apt-key add - && \
     apt-get update && apt-get install -y bazel
+RUN pip install numpy
 RUN pip install qibuild
 ADD ctc-linux64-atom-2.5.2.74.zip /
 RUN unzip ctc-linux64-atom-2.5.2.74.zip
