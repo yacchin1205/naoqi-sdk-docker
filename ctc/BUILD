@@ -1,4 +1,4 @@
-package(default_visibility = ['//ctc:__pkg__'])
+package(default_visibility = ['//bazel-ctc:__pkg__'])
 
 cc_toolchain_suite(
     name = "toolchain",

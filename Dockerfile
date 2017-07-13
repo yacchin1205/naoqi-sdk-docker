@@ -15,3 +15,4 @@ RUN unzip ctc-linux64-atom-2.5.2.74.zip
 RUN cd /root && qibuild init && \
     qitoolchain create atom /ctc-linux64-atom-2.5.2.74/toolchain.xml && \
     qibuild add-config atom -t atom --default
+ADD ctc /root/bazel-ctc
