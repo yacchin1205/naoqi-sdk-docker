@@ -53,7 +53,7 @@ toolchain {
   compiler_flag: "-fomit-frame-pointer"
   compiler_flag: "-m32"
   compiler_flag: "-march=i686"
-  #compiler_flag: "-mssse3"
+  compiler_flag: "-mssse3"
   compiler_flag: "-mfpmath=sse"
   compiler_flag: "-finline-functions-called-once"
   compiler_flag: "-finline-small-functions"
